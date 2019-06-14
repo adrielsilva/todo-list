@@ -6,10 +6,15 @@ import { Injectable } from '@angular/core';
 export class ListaService {
 
   constructor() {
-    
+
   }
 
-  getLista(){
-    return [ {descricao: 'Cras justo odio'}, {descricao: 'Dapibus ac facilisis in'}]
+  getLista() {
+    return [
+      { id:1,
+        descricao: 'Cras justo odio' },
+      { id:2,
+        descricao: 'Dapibus ac facilisis in' }
+    ]
   }
 }

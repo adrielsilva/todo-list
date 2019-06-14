@@ -1,0 +1,9 @@
+<div class="input-group mb-3" >
+  <form [formGroup]="tarefaForm" >
+    <input type="text" class="form-control" placeholder="Inserir tarefa na lista" aria-label="Inserir tarefa na lista"
+      aria-describedby="button-addon2" formControlName='descricao'>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="inserirTarefa()">Inserir</button>
+    </div>
+  </form>
+</div>

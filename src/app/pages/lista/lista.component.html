@@ -1,4 +1,11 @@
-<ul class="list-group">
-  <li *ngFor="let item of itemLista" class="list-group-item">{{item.descricao}}</li>
-</ul>
+<div class="row">
+  <div class="col-lg-6">
+    <ul class="list-group">
+      <li *ngFor="let item of itemLista" class="list-group-item">{{item.descricao}}</li>
+    </ul>
+  </div>
+  <div class="col-lg-6">
+    <app-input></app-input>
+  </div>
+</div>
 

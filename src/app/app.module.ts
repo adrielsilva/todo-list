@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { MenuComponent } from './themes/menu/menu.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     PagesModule,
     NgbModule,
+    ReactiveFormsModule,
+    FormsModule
+    
     
   ],
   providers: [],
