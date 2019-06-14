@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ListaComponent } from './lista/lista.component';
 import { DoneComponent } from './done/done.component';
+import { ListaService } from './lista/lista.service';
 
 
 
@@ -16,7 +17,7 @@ import { DoneComponent } from './done/done.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ListaService],
   bootstrap: []
 })
 export class PagesModule { }
