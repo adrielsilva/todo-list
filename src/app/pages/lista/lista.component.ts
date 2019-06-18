@@ -19,4 +19,13 @@ export class ListaComponent implements OnInit {
   ngOnInit() {
   }
 
+  verificaEvento(event){
+    console.log(event)
+    this.itemLista.push({descricao: event})
+    console.log(this.itemLista)
+  }
+
+  atualizaStatus(index){
+    this.itemLista[index].status = true;
+  }
 }
