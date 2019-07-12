@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/storage.services';
+import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-done',
@@ -17,7 +18,7 @@ export class DoneComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.itemLista = this.storageService.listaTarefas
+    this.itemLista = this.route.snapshot.data.lista
   }
 
 }

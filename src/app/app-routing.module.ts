@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListaComponent } from './pages/lista/lista.component';
 import { DoneComponent } from './pages/done/done.component';
 import { ListaResolveGuard } from './pages/lista/guards/lista.resolve';
+import { DoneResolveGuard } from './pages/done/guards/done.resolve';
 
 const routes: Routes = [
   { path: '', component: ListaComponent },
@@ -13,7 +14,14 @@ const routes: Routes = [
       lista: ListaResolveGuard
     }
   },
-  { path: 'done', component: DoneComponent }
+
+  { 
+  path: 'done', 
+  component: DoneComponent,
+  resolve:{
+    lista: DoneResolveGuard
+  }
+}
 
 ]
 
