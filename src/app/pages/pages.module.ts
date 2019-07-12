@@ -5,6 +5,7 @@ import { DoneComponent } from './done/done.component';
 import { ListaService } from './lista/lista.service';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ListaResolveGuard } from './lista/guards/lista.resolve';
 
 
 
@@ -23,7 +24,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [ListaService],
+  providers: [ListaService, ListaResolveGuard],
   bootstrap: []
 })
 export class PagesModule { }

@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListaComponent } from './pages/lista/lista.component';
 import { DoneComponent } from './pages/done/done.component';
+import { ListaResolveGuard } from './pages/lista/guards/lista.resolve';
 
 const routes: Routes = [
-  { path: '', component: ListaComponent},
-  { 
+  { path: '', component: ListaComponent },
+  {
     path: 'lista',
     component: ListaComponent,
-    data: {
-      tarefas:''
+    resolve: {
+      lista: ListaResolveGuard
     }
-},
-  { path: 'done', component: DoneComponent}
+  },
+  { path: 'done', component: DoneComponent }
 
 ]
 

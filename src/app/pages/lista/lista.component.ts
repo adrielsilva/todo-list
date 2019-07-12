@@ -13,12 +13,14 @@ export class ListaComponent implements OnInit {
   public itemLista: any = []
 
   constructor(
-    public storageService: StorageService
+    public storageService: StorageService,
+    private route: ActivatedRoute
   ) {
-    this.itemLista = this.storageService.listaTarefas;
+
   }
 
   ngOnInit() {
+    this.itemLista = this.route.snapshot.data.lista
   }
 
   verificaEvento(event) {
