@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { MenuComponent } from './themes/menu/menu.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { StorageService } from './storage.services';
 
 
 @NgModule({
@@ -21,10 +22,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     NgbModule,
     ReactiveFormsModule,
     FormsModule
-    
-    
+
+
   ],
-  providers: [],
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

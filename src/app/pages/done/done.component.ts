@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { StorageService } from 'src/app/storage.services';
 
 @Component({
   selector: 'app-done',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoneComponent implements OnInit {
 
-  constructor() { }
+  public itemLista: any = []
+
+  constructor(
+    private route:ActivatedRoute,
+    public storageService:StorageService
+  ) { }
 
   ngOnInit() {
+    this.itemLista = this.storageService.listaTarefas
   }
 
 }

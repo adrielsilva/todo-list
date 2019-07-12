@@ -5,7 +5,13 @@ import { DoneComponent } from './pages/done/done.component';
 
 const routes: Routes = [
   { path: '', component: ListaComponent},
-  { path: 'lista', component: ListaComponent},
+  { 
+    path: 'lista',
+    component: ListaComponent,
+    data: {
+      tarefas:''
+    }
+},
   { path: 'done', component: DoneComponent}
 
 ]

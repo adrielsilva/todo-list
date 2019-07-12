@@ -1,11 +1,22 @@
-<div class="row">
-  <div class="col-lg-6">
-    <ul class="list-group">
-      <li *ngFor="let item of itemLista" class="list-group-item">{{item.descricao}}</li>
-    </ul>
+<div class="container">
+  <div class="row justify-content-md-center mt-3">
+    <div class="col-lg-8">
+      <app-input></app-input>
+    </div>
+
   </div>
-  <div class="col-lg-6">
-    <app-input (returnDados)="verificaEvento($event)"></app-input>
+  <div class="row justify-content-md-center mt-3">
+    <div class="col-lg-8">
+      <ul class="list-group">
+        <div *ngFor="let item of itemLista; let i = index">
+          <li *ngIf="!item.status" class="list-group-item">{{item.id}} - {{item.descricao}}<span style="float: right">  
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" (click) = 'atualizaStatus(i)'>
+              <label class="form-check-label" for="exampleCheck1"></label>
+            </div>
+          </span></li>
+        </div>
+      </ul>
+    </div>
   </div>
 </div>
-

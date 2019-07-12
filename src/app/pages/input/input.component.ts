@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { StorageService } from 'src/app/storage.services';
 
 @Component({
   selector: 'app-input',
@@ -10,18 +11,26 @@ export class InputComponent implements OnInit {
 
   @Output() returnDados = new EventEmitter<any>()
 
-  public tarefaForm:FormGroup
-  constructor() { 
+  public contador = 0;
+  public tarefaForm: FormGroup;
+
+  constructor(public storageService: StorageService) {
     this.tarefaForm = new FormGroup({
-      descricao: new FormControl('')
+      id: new FormControl(''),
+      descricao: new FormControl(''),
+      status: new FormControl(false),
     })
   }
 
   ngOnInit() {
   }
 
-  inserirTarefa(){    
-    this.returnDados.emit(this.tarefaForm.value.descricao)
+  inserirTarefa() {
+    this.tarefaForm.controls['id'].patchValue(this.contador)
+    this.tarefaForm.controls['status'].patchValue(false)
+    this.storageService.listaTarefas.push(this.tarefaForm.value)
+    this.tarefaForm.reset();
+    this.contador += 1;
   }
 
 }

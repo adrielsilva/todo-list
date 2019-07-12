@@ -11,10 +11,7 @@ export class ListaService {
 
   getLista() {
     return [
-      {  descricao: 'Cras justo odio',
-          status: false},
-      {  descricao: 'Dapibus ac facilisis in',
-         status: false }
+ 
     ]
   }
 }
