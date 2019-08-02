@@ -8,6 +8,7 @@ import { MenuComponent } from './themes/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { StorageService } from './storage.services';
+import { PagesService } from './pages/pages.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { StorageService } from './storage.services';
 
 
   ],
-  providers: [StorageService],
+  providers: [StorageService, PagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

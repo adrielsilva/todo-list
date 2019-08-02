@@ -11,7 +11,7 @@
         <div *ngFor="let item of itemLista; let i = index">
           <li *ngIf="!item.status" class="list-group-item">{{item.id}} - {{item.descricao}}<span style="float: right">  
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" (click) = 'atualizaStatus(i)'>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" (click) = 'pagesService.atualizaStatus(i)'>
               <label class="form-check-label" for="exampleCheck1"></label>
             </div>
           </span></li>

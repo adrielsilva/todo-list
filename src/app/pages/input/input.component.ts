@@ -2,6 +2,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { StorageService } from 'src/app/storage.services';
 
+
+import { PagesService } from '../pages.service';
+
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -14,12 +17,14 @@ export class InputComponent implements OnInit {
   public contador = 0;
   public tarefaForm: FormGroup;
 
-  constructor(public storageService: StorageService) {
+  constructor(private pagesService: PagesService, public storageService: StorageService) {
     this.tarefaForm = new FormGroup({
       id: new FormControl(''),
       descricao: new FormControl(''),
       status: new FormControl(false),
     })
+    
+    
   }
 
   ngOnInit() {
@@ -28,7 +33,9 @@ export class InputComponent implements OnInit {
   inserirTarefa() {
     this.tarefaForm.controls['id'].patchValue(this.contador)
     this.tarefaForm.controls['status'].patchValue(false)
-    this.storageService.listaTarefas.push(this.tarefaForm.value)
+    this.pagesService.inserirTarefa(this.tarefaForm.value)
+    // this.storageService.listaTarefas.push(this.tarefaForm.value)
+    console.log(this.storageService.listaTarefas)
     this.tarefaForm.reset();
     this.contador += 1;
   }

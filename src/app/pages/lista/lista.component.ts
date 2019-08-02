@@ -1,7 +1,9 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { ListaService } from './lista.service';
 import { ActivatedRoute } from '@angular/router';
+
+import {PagesService} from 'src/app/pages/pages.service';
 import { StorageService } from 'src/app/storage.services';
+
 
 @Component({
   selector: 'app-lista',
@@ -10,13 +12,16 @@ import { StorageService } from 'src/app/storage.services';
 })
 export class ListaComponent implements OnInit {
 
+  //pagesService: PagesService;
   public itemLista: any = []
+  
 
-  constructor(
-    public storageService: StorageService,
-    private route: ActivatedRoute
+  constructor(    
+    private pagesService: PagesService,
+    private route: ActivatedRoute,
+    private storageService: StorageService    
   ) {
-
+    // this.itemLista = this.pagesService.retornaLista();
   }
 
   ngOnInit() {
@@ -28,12 +33,14 @@ export class ListaComponent implements OnInit {
   }
 
   atualizaStatus(index: number) {
-    this.itemLista[index].status = true;
-    this.storageService.listaTarefas[index].status = true;
+    this.pagesService.atualizaStatus(index)
+    // this.itemLista[index].status = true;
+    // this.storageService.listaTarefas[index].status = true;
   }
 
   excluirTarefa(index: number) {
-    this.itemLista.splice(index, 1)
+    this.pagesService.excluirTarefa(index)
+    // this.itemLista.splice(index, 1)
   }
 
 }
