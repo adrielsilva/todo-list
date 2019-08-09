@@ -2,7 +2,6 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { StorageService } from 'src/app/storage.services';
 
-
 import { PagesService } from '../pages.service';
 
 @Component({

@@ -17,7 +17,7 @@ export class ListaComponent implements OnInit {
   
 
   constructor(    
-    private pagesService: PagesService,
+    public pagesService: PagesService,
     private route: ActivatedRoute,
     private storageService: StorageService    
   ) {

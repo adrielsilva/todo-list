@@ -18,8 +18,10 @@ export class PagesService {
         }
         
         atualizaStatus(index: number) {
+          console.log(this.itemLista)
           this.itemLista[index].status = true;
           this.storageService.listaTarefas[index].status = true;
+
         }
         
         excluirTarefa(index: number) {
@@ -27,7 +29,9 @@ export class PagesService {
         }
         
         inserirTarefa(tarefa){
+          // this.itemLista.push(tarefa) // Isso insere somente local na lista já carregada inicialmente pelo "backend"
           this.storageService.listaTarefas.push(tarefa)
+          this.itemLista = this.storageService.listaTarefas //Isso recarrega a lista do backend na lista local do componente (se for grande demais, é ruim).
         }
         
         constructor(

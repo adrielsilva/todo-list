@@ -19,6 +19,7 @@ export class DoneComponent implements OnInit {
 
   ngOnInit() {
     this.itemLista = this.route.snapshot.data.lista
+  console.log(this.itemLista)
   }
 
 }
