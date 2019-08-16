@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { StorageService } from 'src/app/storage.services';
 
 import { PagesService } from '../pages.service';
+import { ListaComponent } from '../lista/lista.component';
 
 @Component({
   selector: 'app-input',
@@ -16,7 +17,7 @@ export class InputComponent implements OnInit {
   public contador = 0;
   public tarefaForm: FormGroup;
 
-  constructor(private pagesService: PagesService, public storageService: StorageService) {
+  constructor(private pagesService: PagesService, public storageService: StorageService, public ListaComponent: ListaComponent) {
     this.tarefaForm = new FormGroup({
       id: new FormControl(''),
       descricao: new FormControl(''),
@@ -28,6 +29,7 @@ export class InputComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
   inserirTarefa() {
     this.tarefaForm.controls['id'].patchValue(this.contador)

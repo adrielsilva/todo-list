@@ -28,6 +28,7 @@ export class ListaComponent implements OnInit {
     this.itemLista = this.route.snapshot.data.lista
   }
 
+ 
   verificaEvento(event) {
     this.itemLista.push(event)
   }

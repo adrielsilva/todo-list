@@ -6,7 +6,12 @@ import { ListaResolveGuard } from './pages/lista/guards/lista.resolve';
 import { DoneResolveGuard } from './pages/done/guards/done.resolve';
 
 const routes: Routes = [
-  { path: '', component: ListaComponent },
+  { path: '', 
+    component: ListaComponent,
+    resolve:{
+      lista: ListaResolveGuard
+    }
+   },
   {
     path: 'lista',
     component: ListaComponent,
