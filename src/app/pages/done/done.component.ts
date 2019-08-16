@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/storage.services';
 import { fromEventPattern } from 'rxjs';
 
+import { PagesService } from '../pages.service';
+
 @Component({
   selector: 'app-done',
   templateUrl: './done.component.html',
@@ -14,7 +16,8 @@ export class DoneComponent implements OnInit {
 
   constructor(
     private route:ActivatedRoute,
-    public storageService:StorageService
+    public storageService:StorageService,
+    public pagesService:PagesService
   ) { }
 
   ngOnInit() {

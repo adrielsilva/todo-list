@@ -8,6 +8,7 @@
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" [checked]="item.status" [disabled]="true">
                 <label class="form-check-label" for="exampleCheck1"></label>
+                <button type='button' class='btn btn-light close' (click) = 'pagesService.excluirTarefa(i)'>X</button>
               </div>
             </span></li>
           </div>
