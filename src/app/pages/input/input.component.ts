@@ -16,6 +16,8 @@ export class InputComponent implements OnInit {
 
   public contador = 0;
   public tarefaForm: FormGroup;
+  public debugInput = '';
+
 
   constructor(private pagesService: PagesService, public storageService: StorageService, public ListaComponent: ListaComponent) {
     this.tarefaForm = new FormGroup({
@@ -30,7 +32,6 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
   
-
   inserirTarefa() {
     this.tarefaForm.controls['id'].patchValue(this.contador)
     this.tarefaForm.controls['status'].patchValue(false)
@@ -39,6 +40,10 @@ export class InputComponent implements OnInit {
     console.log(this.storageService.listaTarefas)
     this.tarefaForm.reset();
     this.contador += 1;
+  }
+
+  debug(evento: KeyboardEvent){
+    this.debugInput = (<HTMLInputElement>evento.target).value
   }
 
 }

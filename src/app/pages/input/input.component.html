@@ -1,7 +1,7 @@
 <form [formGroup]="tarefaForm">
   <div class="row">
     <div class="col-md-10">
-      <input type="text" class="form-control" placeholder="Inserir tarefa na lista" aria-label="Inserir tarefa na lista"
+      <input (keyup)="debug($event)" (keyup.enter)="inserirTarefa()" type="text" class="form-control" placeholder="Inserir tarefa na lista" aria-label="Inserir tarefa na lista"
         aria-describedby="button-addon2" formControlName='descricao' required>
     </div>
     <div class="col-md-2">
@@ -10,3 +10,4 @@
     </div>
   </div>
 </form>
+{{ debugInput }}
