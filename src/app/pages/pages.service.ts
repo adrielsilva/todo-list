@@ -18,9 +18,10 @@ export class PagesService {
         }
         
         atualizaStatus(index: number) {
-          console.log(this.itemLista)
-          this.itemLista[index].status = true;
-          this.storageService.listaTarefas[index].status = true;
+          this.itemLista[index].status ? this.itemLista[index].status = false : this.itemLista[index].status = true;
+          // console.log(this.itemLista)
+          // this.itemLista[index].status = true;
+          this.storageService.listaTarefas[index].status = this.itemLista[index].status;
 
         }
         

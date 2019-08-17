@@ -25,4 +25,10 @@ export class DoneComponent implements OnInit {
   console.log(this.itemLista)
   }
 
+  // atualizaStatus(index: number) {
+  //   this.pagesService.atualizaStatus(index)
+  //   // this.itemLista[index].status = true;
+  //   // this.storageService.listaTarefas[index].status = true;
+  // }
+
 }
