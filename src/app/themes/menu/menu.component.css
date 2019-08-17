@@ -1,0 +1,15 @@
+.row{
+    height: 50px;
+    padding-top: 20px;
+}
+
+h4{
+    text-align: center
+}
+
+.logo{
+    padding-top: 30px;
+    background-color: blueviolet;
+    color: white;
+    padding-bottom: 30px;
+}

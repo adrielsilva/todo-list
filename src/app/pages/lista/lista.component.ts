@@ -1,8 +1,9 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import {PagesService} from 'src/app/pages/pages.service';
+import { PagesService } from 'src/app/pages/pages.service';
 import { StorageService } from 'src/app/storage.services';
+
 
 
 @Component({

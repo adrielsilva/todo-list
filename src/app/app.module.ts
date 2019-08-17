@@ -22,9 +22,7 @@ import { PagesService } from './pages/pages.service';
     PagesModule,
     NgbModule,
     ReactiveFormsModule,
-    FormsModule
-
-
+    FormsModule,
   ],
   providers: [StorageService, PagesService],
   bootstrap: [AppComponent]

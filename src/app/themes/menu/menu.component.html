@@ -1,6 +1,20 @@
+<div class="logo">
+<h4>TO-DO LIST</h4>
+</div>
+
 <div class='row justify-content-md-center'> 
-  <nav class="navbar navbar-light bg-light">
-  <a [routerLink]="['/lista']" class="navbar-brand">Lista</a>
-  <a [routerLink]="['/done']" class="navbar-brand">Done</a>  
+  <nav class="nav">
+  <a [routerLink]="['/lista']" class="nav-link">A Fazer</a>
+  <a [routerLink]="['/done']" class="nav-link">Concluído</a>  
 </nav>
 </div>
+<!-- <div class='row justify-content-md-center'> 
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" [routerlink] = "['/lista']">A Fazer</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerlink] = "['/done']">Conluídos</a>
+  </li>
+</ul>
+</div> -->
