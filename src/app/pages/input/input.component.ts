@@ -17,7 +17,7 @@ export class InputComponent implements OnInit {
   public contador = 0;
   public tarefaForm: FormGroup;
   public debugInput = '';
-
+  public placeholder = 'Digite aqui sua tarefa...'
 
   constructor(private pagesService: PagesService, public storageService: StorageService, public ListaComponent: ListaComponent) {
     this.tarefaForm = new FormGroup({
@@ -26,6 +26,7 @@ export class InputComponent implements OnInit {
       status: new FormControl(false),
     })
     
+
     
   }
 

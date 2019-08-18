@@ -1,8 +1,12 @@
 <form [formGroup]="tarefaForm">
   <div class="row">
     <div class="col-md-10">
-      <input (keyup)="debug($event)" (keyup.enter)="inserirTarefa()" type="text" class="form-control" placeholder="Inserir tarefa na lista" aria-label="Inserir tarefa na lista"
-        aria-describedby="button-addon2" formControlName='descricao' required>
+      <input  [(ngModel)]="debugInput" 
+              (keyup.enter)="inserirTarefa()" 
+              type="text" class="form-control" 
+              [placeholder]="placeholder" 
+              aria-describedby="button-addon2" 
+              formControlName='descricao' required>
     </div>
     <div class="col-md-2">
       <button [disabled]="!tarefaForm.valid" class="btn btn-block btn-outline-secondary" type="button"
