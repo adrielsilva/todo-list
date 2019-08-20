@@ -12,7 +12,7 @@ import { ListaComponent } from '../lista/lista.component';
 })
 export class InputComponent implements OnInit {
 
-  @Output() returnDados = new EventEmitter<any>()
+  // @Output() returnDados = new EventEmitter<any>()
 
   public contador = 0;
   public tarefaForm: FormGroup;
@@ -25,9 +25,6 @@ export class InputComponent implements OnInit {
       descricao: new FormControl(''),
       status: new FormControl(false),
     })
-    
-
-    
   }
 
   ngOnInit() {
