@@ -45,4 +45,10 @@ export class ListaComponent implements OnInit {
     // this.itemLista.splice(index, 1)
   }
 
+  listavazia(){
+    console.log(this.itemLista.length)
+    return ( this.itemLista.length == 0 ? true : false) 
+
+  }
+  
 }
